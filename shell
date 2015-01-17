@@ -1,0 +1,1 @@
+docker run -p 3000:3000 -v `pwd`/data:/var/lib/mongodb -v `pwd`:/docker -w /docker --rm -i -t stridercd /bin/bash

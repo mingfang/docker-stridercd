@@ -1,0 +1,1 @@
+docker run -v `pwd`/data:/var/lib/mongodb --rm stridercd sh -c "runsv /etc/service/mongodb& while ! nc -vz localhost 27017;do sleep 3; done && /strider/bin/strider addUser --email admin --password admin --admin true" 
