@@ -27,9 +27,10 @@ RUN mv node* node && \
     ln -s /node/bin/npm /usr/local/bin/npm
 ENV NODE_PATH /usr/local/lib/node_modules
 
-RUN curl -L https://github.com/Strider-CD/strider/archive/1.6.0.tar.gz | tar zx
-RUN mv /strider* /strider && \
-    cd /strider && \
+RUN curl -L https://github.com/Strider-CD/strider/archive/v1.6.1.tar.gz | tar zx
+RUN mv /strider* /strider
+#RUN git clone --depth 1 https://github.com/Strider-CD/strider.git
+RUN cd /strider && \
     npm install && \
     npm run postinstall && \
     npm run build 
